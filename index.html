@@ -7,68 +7,141 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f9f9f9; }
         .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        /* h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; } */
-       h1 { color: #EE6E4D; }
+        h1 { color: #EE6E4D; }
         h2 { color: #2980b9; margin-top: 30px; }
+        h3 { color: #444; margin-top: 20px; }
         p, li { color: #555; }
         .contact-box { background: #e8f4fd; padding: 15px; border-radius: 8px; margin-top: 20px; }
+        .warning-box { background: #fff3cd; padding: 15px; border-radius: 8px; margin: 15px 0; color: #856404; }
         .footer { text-align: center; margin-top: 40px; font-size: 0.9em; color: #888; }
+        ul li { margin-bottom: 6px; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #EE6E4D; color: white; padding: 10px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #eee; color: #555; }
+        tr:nth-child(even) td { background: #f9f9f9; }
     </style>
 </head>
 <body>
     <div class="container">
-         <h1>Artistic Walls</h1>
-        <h2>Privacy Policy & Terms of Use</h1>
-        <p><strong>Effective Date:</strong> January 29, 2026</p>
+        <h1>Artistic Walls</h1>
+        <h2>Privacy Policy &amp; Terms of Use</h2>
+        <p><strong>Effective Date:</strong> January 29, 2026 &nbsp;|&nbsp; <strong>Last Updated:</strong> February 2026</p>
         <p>Welcome to <strong>Artistic Walls</strong>. This app is developed and maintained by <strong>Mohammad Zain Rehman</strong>.</p>
 
         <hr>
 
-        <h2>1. Privacy Policy (Data Protection)</h2>
-      <p>I respect your privacy and am committed to protecting the personal data I collect.</p>
+        <!-- ===== SECTION 1: PRIVACY POLICY ===== -->
+        <h2>1. Privacy Policy</h2>
+        <p>I respect your privacy and am committed to protecting the personal data I collect.</p>
 
-        
-        <h3>Information Collection and Use</h3>
+        <h3>Information I Collect</h3>
         <ul>
-            <p><strong>Data Security:</strong> All data is transmitted securely using HTTPS and encrypted in transit.</p>
-            <li><strong>Personal Data:</strong> I collect your <strong>Name</strong>,  <strong>Email Address</strong>  and <strong>Profile image</strong>  linked with your Email through Google Sign-In (Firebase Authentication) to enable account features and sync your "Favorites" and "Purchased items" list.</li>
-            <li><strong>Device Identifiers:</strong> I use standard identifiers (Firebase UID) to manage your session and ensure app security.</li>
-
+            <li><strong>Personal Data:</strong> Your Name, Email Address, and Profile Image are collected through Google Sign-In (Firebase Authentication) to enable account features and sync your Favorites and subscription status.</li>
+            <li><strong>Purchase Data:</strong> When you make an in-app purchase, I receive and store a purchase token, product ID, and subscription expiry date from Google Play. This is used solely to verify and grant your subscription access. I do not store your payment card details — all billing is handled entirely by Google Play.</li>
+            <li><strong>Device Identifiers:</strong> Firebase UID is used to manage your session and ensure app security.</li>
+            <li><strong>Usage Data:</strong> I do not collect behavioral analytics or tracking data beyond what Firebase Authentication requires.</li>
         </ul>
 
-        <h3>Third-Party Services</h3>
-        <p>I use <strong>Google Firebase</strong> for authentication and database services. Your data is handled according to Google's Privacy Policy. I do not sell, trade, or rent your personal information to any third parties.</p>
+        <h3>Data Security</h3>
+        <p>All data is transmitted securely using HTTPS and stored on Cloudflare's infrastructure. Purchase tokens are validated server-side via the Google Play Developer API and never exposed to any third party.</p>
 
-        <h3>Data Retention & Deletion</h3>
-       <p>
-I retain your data as long as your account is active.
-You can request data deletion directly within the app settings or via our
-<a href="https://zainr10.github.io/artistic_walls_delete_account_web/">Request Account Deletion</a>.
-All deletion requests are processed within 7 days after verification.
-</p>
+        <h3>Third-Party Services</h3>
+        <p>I use the following third-party services:</p>
+        <ul>
+            <li><strong>Google Firebase</strong> — Authentication &amp; session management</li>
+            <li><strong>Google Play Billing</strong> — In-app purchase processing and subscription management</li>
+            <li><strong>Google AdMob</strong> — Advertising (only shown to non-subscribed users)</li>
+            <li><strong>Cloudflare Workers &amp; D1</strong> — Backend API and database</li>
+            <li><strong>Cloudflare R2</strong> — Wallpaper image storage</li>
+        </ul>
+        <p>I do not sell, trade, or rent your personal information to any third parties.</p>
+
+        <h3>Data Retention &amp; Deletion</h3>
+        <p>I retain your data as long as your account is active. You can request data deletion directly within the app settings or via our <a href="https://zainr10.github.io/artistic_walls_delete_account_web/">Account Deletion page</a>. All deletion requests are processed within 7 days of verification.</p>
 
         <hr>
 
-        <h2>2. Terms of Use (Content & Copyright)</h2>
-        
-        <h3>AI-Generated Content</h3>
-        <p>
-All AI-generated content complies with the usage policies of the respective AI platforms.
-</p>
-        <p>The wallpapers provided in Artistic Walls are artistic works generated using Artificial Intelligence (AI) tools, including Leonardo AI and Adobe Firefly. By using this app, you acknowledge that:</p>
+        <!-- ===== SECTION 2: IN-APP PURCHASES ===== -->
+        <h2>2. In-App Purchases &amp; Subscriptions</h2>
+
+        <h3>Available Subscriptions</h3>
+        <table>
+            <tr>
+                <th>Plan</th>
+                <th>What's Included</th>
+                <th>Billing</th>
+            </tr>
+            <tr>
+                <td><strong>Premium Monthly</strong></td>
+                <td>Full access to all premium wallpapers + ad-free experience</td>
+                <td>Monthly, via Google Play</td>
+            </tr>
+            <tr>
+                <td><strong>Remove Ads Monthly</strong></td>
+                <td>Ad-free experience only (non-premium wallpapers)</td>
+                <td>Monthly, via Google Play</td>
+            </tr>
+        </table>
+
+        <h3>Billing &amp; Renewal</h3>
         <ul>
-            <li><strong>Ownership:</strong> All wallpapers are the property of the developer. They are provided for personal use as device wallpapers only.</li>
+            <li>All purchases are processed by <strong>Google Play</strong>. Prices are shown in your local currency before purchase.</li>
+            <li>Subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the renewal date.</li>
+            <li>Your Google Play account is charged within 24 hours before the renewal date.</li>
+        </ul>
+
+        <h3>Cancellation</h3>
+        <p>You can cancel your subscription at any time through the Google Play Store:</p>
+        <ol>
+            <li>Open <strong>Google Play Store</strong> → tap your profile icon</li>
+            <li>Go to <strong>Payments &amp; subscriptions</strong> → <strong>Subscriptions</strong></li>
+            <li>Find <strong>Artistic Walls</strong> and tap <strong>Cancel subscription</strong></li>
+        </ol>
+        <p>Or visit: <a href="https://play.google.com/store/account/subscriptions" target="_blank">play.google.com/store/account/subscriptions</a></p>
+        <p>Cancellation takes effect at the end of the current billing period. You retain access until then.</p>
+
+        <h3>Refund Policy</h3>
+        <p>Since all billing is handled by Google Play, refund requests must be submitted directly to Google. I do not independently process refunds. To request a refund:</p>
+        <ul>
+            <li>Visit <a href="https://support.google.com/googleplay/answer/2479637" target="_blank">Google Play's refund request page</a></li>
+            <li>Or contact Google Play Support directly</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>⚠️ Note on Account Deletion &amp; Subscriptions:</strong> Deleting your Artistic Walls account removes your purchase records from our servers but does <strong>not</strong> cancel your active Google Play subscription. You must cancel through Google Play separately to stop future charges.
+        </div>
+
+        <h3>Access After Subscription Ends</h3>
+        <p>When a subscription expires or is cancelled, premium wallpapers and ad-free features will no longer be accessible. Non-premium wallpapers remain freely available.</p>
+
+        <!-- ===== SECTION : Advertising ===== -->
+
+        <h2>3. Advertising</h2>
+<h3>Artistic Walls displays ads through Google AdMob.</h3>
+<p>AdMob may collect device identifiers and usage data to provide personalized or non-personalized ads in accordance with Google's Privacy Policy:</p>
+<li>Visit <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a></li>
+<p>Users in supported regions may be asked for consent before personalized ads are shown.</p>
+        <hr>
+        <!-- ===== SECTION 3: TERMS OF USE ===== -->
+        <h2>4. Terms of Use</h2>
+
+        <h3>AI-Generated Content</h3>
+        <p>The wallpapers in Artistic Walls are artistic works generated using AI tools including Leonardo AI and Adobe Firefly. All AI-generated content complies with the usage policies of the respective platforms. By using this app, you acknowledge that:</p>
+        <ul>
+            <li><strong>Ownership:</strong> The developer holds the commercial distribution rights to these images under the licenses provided by Leonardo AI/Adobe Firefly. Users are granted a limited, non-exclusive license to use these images for personal device customization only.</li>
             <li><strong>Commercial Use:</strong> You may not redistribute, sell, or claim ownership of these wallpapers for commercial purposes without explicit written permission.</li>
             <li><strong>Accuracy:</strong> As these images are AI-generated, they may contain artistic artifacts or variations.</li>
         </ul>
 
         <h3>User Conduct</h3>
-        <p>You agree not to attempt to scrape, reverse engineer, or exploit the app's content or services.</p>
+        <p>You agree not to attempt to scrape, reverse engineer, or exploit the app's content or services. Any misuse may result in account termination. Refund eligibility will be determined according to Google Play's refund policies.</p>
+
+        <h3>Changes to These Terms</h3>
+        <p>I may update these terms from time to time. Continued use of the app after changes constitutes your acceptance of the updated terms.</p>
 
         <div class="contact-box">
-            <strong>Questions?</strong><br>
-            If you have any questions about these policies, please contact:<br>
-            <strong>Email:</strong> zainrehan347@gmail.com
+            <strong>Questions or concerns?</strong><br>
+            Contact me at: <strong>zainrehan347@gmail.com</strong>
         </div>
     </div>
 
